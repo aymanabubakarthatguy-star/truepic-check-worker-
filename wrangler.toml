@@ -1,0 +1,16 @@
+name = "truepic-check"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Comma-separated list of exact frontend origins allowed to call this Worker.
+ALLOWED_ORIGINS = "https://your-frontend-domain.example"
+
+# KV namespace used ONLY for the hashed per-day rate-limit counter.
+# Create with: npx wrangler kv namespace create RATE_LIMIT
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# OPENROUTER_API_KEY is a SECRET. Do NOT add it here.
+# Set it with: npx wrangler secret put OPENROUTER_API_KEY
